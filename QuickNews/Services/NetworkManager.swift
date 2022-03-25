@@ -32,8 +32,9 @@ class NetworkManager {
             newEnvelope == nil ? completion(nil) : completion(newEnvelope!.articles)
         }.resume()
     }
+    
     func getImage(urlString: String, completion: @escaping (Data?) -> Void) {
-        guard let url = URL(string: urlString) else { return
+        guard let url = URL(string: urlString) else {
             completion(nil)
             return
         }

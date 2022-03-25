@@ -17,8 +17,13 @@ class ViewController: UIViewController {
 //            guard let news = news else {return}
 //            print(news[0].title)
 //        }
+        NetworkManager.shared.getNews { (news) in
+            guard let news = news else { return }
+            print(news.first?.title ?? "Error")
+        }
+        
     }
-
+    
 
 }
 
