@@ -19,15 +19,16 @@ final class HeaderView: UIView {
         return v
     }()
     
-    private lazy var headerImage: UIImageView = {
+     lazy var headerImage: UIImageView = {
         let v = UIImageView()
         v.translatesAutoresizingMaskIntoConstraints = false
         v.contentMode = .scaleAspectFit
         let config = UIImage.SymbolConfiguration(pointSize: fontSize, weight: .bold)
         v.image = UIImage(systemName: "q.square", withConfiguration: config)
+        return v
     }()
     
-    private let var subHeaderLine =: UILabel = {
+    private lazy var subHeaderLine: UILabel = {
         let v = UILabel()
         v.translatesAutoresizingMaskIntoConstraints = false
         v.font = v.font.withSize(fontSize)
@@ -54,6 +55,7 @@ final class HeaderView: UIView {
     }
     
     func setupView() {
+        headerImage.tintColor = .black
         addSubview(headerStackView)
         addSubview(subHeaderLine)
         
