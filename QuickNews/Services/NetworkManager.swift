@@ -15,9 +15,11 @@ class NetworkManager {
     
     private let baseUrlString = "https://newsapi.org/v2/"
     private let topHeadline = "top-headlines?language=en"
+   // let categoryString = "business"
     
     func getNews(completion: @escaping([News]?) -> Void) {
-        let urlString = "\(baseUrlString)\(topHeadline)&apiKey=\(APIKey.key)"
+        let urlString = "\(baseUrlString)\(topHeadline)&category=\(categoryArray[categoryNumber])&apiKey=\(APIKey.key)"
+//        let urlStringTwo = "https://newsapi.org/v2/top-headlines/sources?category=business&language=en&apiKey=88aaae2339764dc2be1d77f32e52333b"
         guard let url = URL(string: urlString) else {
             return
         }

@@ -20,10 +20,11 @@
 		0BF8753E27EE091C0024AD00 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF8753D27EE091B0024AD00 /* HeaderView.swift */; };
 		0BF8754027EE29320024AD00 /* ShadowImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF8753F27EE29310024AD00 /* ShadowImageView.swift */; };
 		0BF8754227EE365C0024AD00 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF8754127EE365C0024AD00 /* NewsTableViewCell.swift */; };
+		0BF8754427EF36C60024AD00 /* ShakeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF8754327EF36C60024AD00 /* ShakeCategory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0BF8751327EBD95E0024AD00 /* QuickNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BF8751327EBD95E0024AD00 /* ShakeNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShakeNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF8751627EBD95E0024AD00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BF8751827EBD95E0024AD00 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0BF8751A27EBD95E0024AD00 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +39,7 @@
 		0BF8753D27EE091B0024AD00 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		0BF8753F27EE29310024AD00 /* ShadowImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowImageView.swift; sourceTree = "<group>"; };
 		0BF8754127EE365C0024AD00 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		0BF8754327EF36C60024AD00 /* ShakeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeCategory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +64,7 @@
 		0BF8751427EBD95E0024AD00 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0BF8751327EBD95E0024AD00 /* QuickNews.app */,
+				0BF8751327EBD95E0024AD00 /* ShakeNews.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				0BF8753527EC5D570024AD00 /* NetworkManager.swift */,
+				0BF8754327EF36C60024AD00 /* ShakeCategory.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -131,9 +134,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0BF8751227EBD95E0024AD00 /* QuickNews */ = {
+		0BF8751227EBD95E0024AD00 /* ShakeNews */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0BF8752727EBD9610024AD00 /* Build configuration list for PBXNativeTarget "QuickNews" */;
+			buildConfigurationList = 0BF8752727EBD9610024AD00 /* Build configuration list for PBXNativeTarget "ShakeNews" */;
 			buildPhases = (
 				0BF8750F27EBD95E0024AD00 /* Sources */,
 				0BF8751027EBD95E0024AD00 /* Frameworks */,
@@ -143,9 +146,9 @@
 			);
 			dependencies = (
 			);
-			name = QuickNews;
+			name = ShakeNews;
 			productName = QuickNews;
-			productReference = 0BF8751327EBD95E0024AD00 /* QuickNews.app */;
+			productReference = 0BF8751327EBD95E0024AD00 /* ShakeNews.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -163,7 +166,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0BF8750E27EBD95E0024AD00 /* Build configuration list for PBXProject "QuickNews" */;
+			buildConfigurationList = 0BF8750E27EBD95E0024AD00 /* Build configuration list for PBXProject "ShakeNews" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -176,7 +179,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0BF8751227EBD95E0024AD00 /* QuickNews */,
+				0BF8751227EBD95E0024AD00 /* ShakeNews */,
 			);
 		};
 /* End PBXProject section */
@@ -202,6 +205,7 @@
 				0BF8754227EE365C0024AD00 /* NewsTableViewCell.swift in Sources */,
 				0BF8753E27EE091C0024AD00 /* HeaderView.swift in Sources */,
 				0BF8751727EBD95E0024AD00 /* AppDelegate.swift in Sources */,
+				0BF8754427EF36C60024AD00 /* ShakeCategory.swift in Sources */,
 				0BF8751927EBD95E0024AD00 /* SceneDelegate.swift in Sources */,
 				0BF8753627EC5D570024AD00 /* NetworkManager.swift in Sources */,
 				0BF8753927EDF6E00024AD00 /* NewsViewModel.swift in Sources */,
@@ -352,6 +356,7 @@
 				DEVELOPMENT_TEAM = 327B2F3V2J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QuickNews/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ShakeNews;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -361,7 +366,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Mr.Ki.QuickNews;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Mr.Ki.ShakeNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -379,6 +384,7 @@
 				DEVELOPMENT_TEAM = 327B2F3V2J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QuickNews/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ShakeNews;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -388,7 +394,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Mr.Ki.QuickNews;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Mr.Ki.ShakeNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -399,7 +405,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0BF8750E27EBD95E0024AD00 /* Build configuration list for PBXProject "QuickNews" */ = {
+		0BF8750E27EBD95E0024AD00 /* Build configuration list for PBXProject "ShakeNews" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0BF8752527EBD9610024AD00 /* Debug */,
@@ -408,7 +414,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0BF8752727EBD9610024AD00 /* Build configuration list for PBXNativeTarget "QuickNews" */ = {
+		0BF8752727EBD9610024AD00 /* Build configuration list for PBXNativeTarget "ShakeNews" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0BF8752827EBD9610024AD00 /* Debug */,

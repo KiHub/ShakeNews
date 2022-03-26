@@ -11,10 +11,12 @@ final class HeaderView: UIView {
     
     private var fontSize: CGFloat
     
+    var subHeadLinetext = categoryArray[categoryNumber]
+    
     private lazy var headerLabel: UILabel = {
         let v = UILabel()
         v.translatesAutoresizingMaskIntoConstraints = false
-        v.text = "QuickNews"
+        v.text = "ShakeNews"
         v.font = UIFont.boldSystemFont(ofSize: fontSize)
         return v
     }()
@@ -24,7 +26,7 @@ final class HeaderView: UIView {
         v.translatesAutoresizingMaskIntoConstraints = false
         v.contentMode = .scaleAspectFit
         let config = UIImage.SymbolConfiguration(pointSize: fontSize, weight: .bold)
-        v.image = UIImage(systemName: "q.square", withConfiguration: config)
+        v.image = UIImage(systemName: "s.square", withConfiguration: config)
         return v
     }()
     
@@ -32,7 +34,8 @@ final class HeaderView: UIView {
         let v = UILabel()
         v.translatesAutoresizingMaskIntoConstraints = false
         v.font = v.font.withSize(fontSize)
-        v.text = "Top headlines"
+       // v.text = "Top headlines"
+        v.text = subHeadLinetext
         return v
     }()
     

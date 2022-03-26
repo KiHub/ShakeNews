@@ -93,3 +93,28 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         present(safariViewController, animated: true)
     }
 }
+
+extension ViewController {
+    
+//    override var canBecomeFirstResponder: Bool {
+//        return true
+//    }
+    override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        
+    }
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            
+            if categoryNumber != 6 {
+                categoryNumber += 1
+            } else {
+                categoryNumber = 0
+            }
+            fetchNews()
+          //  change category
+          // update table view
+           print("Motion detected")
+        }
+    }
+    
+}

@@ -20,3 +20,14 @@ struct NewsEnvelope: Decodable {
     let totalResults: Int
     let articles: [News]
 }
+
+enum category {
+case business
+
+    case entertainment
+    case general
+    case health
+    case science
+    case sports
+    case technology
+}
