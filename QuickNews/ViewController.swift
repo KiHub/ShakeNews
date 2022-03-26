@@ -104,12 +104,23 @@ extension ViewController {
             Shake.shake.changeCategory()
             fetchNews()
             setSubHeaderText()
+            shakeLabel()
             print("Motion detected")
         }
     }
     
     func setSubHeaderText() {
         headerView.subHeaderLine.text = Shake.shake.categoryArray[Shake.shake.categoryNumber]
+    }
+    
+    private func shakeLabel() {
+        let animation = CAKeyframeAnimation()
+        animation.keyPath = "position.x"
+        animation.values = [0, 10, -10, 10, 0]
+        animation.keyTimes = [0, 0.16, 0.5, 0.83, 1]
+        animation.duration = 0.4
+        animation.isAdditive = true
+        headerView.subHeaderLine.layer.add(animation, forKey: "shake")
     }
     
 }
