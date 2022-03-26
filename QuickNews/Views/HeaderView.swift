@@ -7,11 +7,11 @@
 
 import UIKit
 
-final class HeaderView: UIView {
+ class HeaderView: UIView {
     
     private var fontSize: CGFloat
     
-    var subHeadLinetext = categoryArray[categoryNumber]
+  //   var subHeadLinetext: String
     
     private lazy var headerLabel: UILabel = {
         let v = UILabel()
@@ -30,12 +30,12 @@ final class HeaderView: UIView {
         return v
     }()
     
-    private lazy var subHeaderLine: UILabel = {
+     lazy var subHeaderLine: UILabel = {
         let v = UILabel()
         v.translatesAutoresizingMaskIntoConstraints = false
         v.font = v.font.withSize(fontSize)
-       // v.text = "Top headlines"
-        v.text = subHeadLinetext
+        v.text = "Top headlines"
+       // v.text = subHeadLinetext
         return v
     }()
     

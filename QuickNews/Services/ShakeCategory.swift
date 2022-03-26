@@ -7,6 +7,11 @@
 
 import Foundation
 
+class Shake {
+    
+   static let shake = Shake()
+    
+
 var categoryNumber = 0
 
 let categoryArray = [
@@ -17,3 +22,13 @@ let categoryArray = [
 "science",
 "sports",
 "technology"]
+
+func changeCategory() {
+    if categoryNumber != 6 {
+        categoryNumber += 1
+    } else {
+        categoryNumber = 0
+    }
+}
+
+}

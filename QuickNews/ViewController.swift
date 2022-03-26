@@ -10,9 +10,11 @@ import SafariServices
 
 class ViewController: UIViewController {
     
-    var viewModel = NewsListViewModel()
     
-    private lazy var headerView: HeaderView = {
+   
+    var viewModel = NewsListViewModel()
+ 
+        lazy var headerView: HeaderView = {
         let v = HeaderView(fontSize: 32)
         return v
     }()
@@ -29,14 +31,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setupView()
         fetchNews()
-        
-        //        NetworkManager.shared.getNews { (news) in
-        //            guard let news = news else { return }
-        //            print(news.first?.title ?? "Error")
-        //        }
         
     }
     
@@ -45,8 +42,8 @@ class ViewController: UIViewController {
         view.addSubview(headerView)
         view.addSubview(tableView)
         setupConstraints()
-        
-    }
+        setSubHeaderText()
+            }
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
@@ -96,25 +93,23 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ViewController {
     
-//    override var canBecomeFirstResponder: Bool {
-//        return true
-//    }
+    //    override var canBecomeFirstResponder: Bool {
+    //        return true
+    //    }
     override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         
     }
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            
-            if categoryNumber != 6 {
-                categoryNumber += 1
-            } else {
-                categoryNumber = 0
-            }
+            Shake.shake.changeCategory()
             fetchNews()
-          //  change category
-          // update table view
-           print("Motion detected")
+            setSubHeaderText()
+            print("Motion detected")
         }
+    }
+    
+    func setSubHeaderText() {
+        headerView.subHeaderLine.text = Shake.shake.categoryArray[Shake.shake.categoryNumber]
     }
     
 }
