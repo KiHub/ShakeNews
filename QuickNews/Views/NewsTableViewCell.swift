@@ -9,24 +9,31 @@ import UIKit
 
 final class  NewsTableViewCell: UITableViewCell {
     
+    let group = DispatchGroup()
+    
     var newsViewModel: NewsViewModel? {
         didSet {
+            group.enter()
             if let newsViewModel = newsViewModel {
                 titleLabel.text = newsViewModel.title
                 NetworkManager.shared.getImage(urlString: newsViewModel.urlToImage) { (data) in
                     guard let data = data else {return}
-                    DispatchQueue.main.async {
+                   // DispatchQueue.main.async {
+                    self.group.notify(queue: .main) {
                         self.newsImage.image = UIImage(data: data)
                     }
                 }
             }
+            group.leave()
         }
     }
     var newsImageData: Data? {
         didSet {
+            group.leave()
             if let data = newsImageData {
                 newsImage.image = UIImage(data: data)
             }
+            group.leave()
         }
     }
     private lazy var newsImage: ShadowImageView = {
