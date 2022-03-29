@@ -8,13 +8,18 @@
 import UIKit
 import SafariServices
 
+//protocol ViewConyrollerDelegate: AnyObject {
+//    func didLoadingMainVC()
+//}
+
 class ViewController: UIViewController {
     
     
-   
+    
     var viewModel = NewsListViewModel()
- 
-        lazy var headerView: HeaderView = {
+    //    weak var delegate: ViewConyrollerDelegate?
+    
+    lazy var headerView: HeaderView = {
         let v = HeaderView(fontSize: 32)
         return v
     }()
@@ -31,10 +36,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupView()
         fetchNews()
-        
+        //       delegate?.didLoadingMainVC()
     }
     
     func setupView() {
@@ -43,7 +48,7 @@ class ViewController: UIViewController {
         view.addSubview(tableView)
         setupConstraints()
         setSubHeaderText()
-            }
+    }
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
@@ -116,7 +121,7 @@ extension ViewController {
     private func shakeLabel() {
         let animation = CAKeyframeAnimation()
         animation.keyPath = "position.x"
-        animation.values = [0, 10, -10, 10, 0]
+        animation.values = [0, 15, -10, 15, 0]
         animation.keyTimes = [0, 0.16, 0.5, 0.83, 1]
         animation.duration = 0.4
         animation.isAdditive = true
