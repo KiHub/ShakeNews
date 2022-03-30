@@ -17,8 +17,9 @@ class ViewController: UIViewController {
     
     
     var viewModel = NewsListViewModel()
-    //    weak var delegate: ViewConyrollerDelegate?
     
+    //    weak var delegate: ViewConyrollerDelegate?
+    let refreshControl = UIRefreshControl()
     lazy var headerView: HeaderView = {
         let v = HeaderView(fontSize: 32)
         return v
@@ -38,6 +39,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         setupView()
+        setupRefreshControl()
         fetchNews()
         //       delegate?.didLoadingMainVC()
     }
@@ -48,6 +50,12 @@ class ViewController: UIViewController {
         view.addSubview(tableView)
         setupConstraints()
         setSubHeaderText()
+    }
+    
+    private func setupRefreshControl() {
+      //  refreshControl.tintColor = appColor
+          refreshControl.addTarget(self, action: #selector(refreshContent), for: .valueChanged)
+          tableView.refreshControl = refreshControl
     }
     
     func setupConstraints() {
@@ -69,6 +77,7 @@ class ViewController: UIViewController {
     func  fetchNews() {
         viewModel.getNews { (_) in
             self.tableView.reloadData()
+            self.tableView.refreshControl?.endRefreshing()
         }
     }
     
@@ -114,6 +123,8 @@ extension ViewController {
         }
     }
     
+  
+    
     func setSubHeaderText() {
         headerView.subHeaderLine.text = Shake.shake.categoryArray[Shake.shake.categoryNumber]
     }
@@ -127,5 +138,13 @@ extension ViewController {
         animation.isAdditive = true
         headerView.subHeaderLine.layer.add(animation, forKey: "shake")
     }
-    
+}
+//MARK: - Actions
+extension ViewController {
+    @objc func refreshContent() {
+        Shake.shake.changeCategory()
+        fetchNews()
+        setSubHeaderText()
+        shakeLabel()
+        }
 }

@@ -13,7 +13,7 @@ public class LocalState {
         case hasOnboarded
     }
     
-    //MARK: - Computed property for onboarding status
+    //MARK: - Computed property for write and read onboarding status
     public static var hasOnboarded: Bool {
         get {
             return UserDefaults.standard.bool(forKey: Keys.hasOnboarded.rawValue)

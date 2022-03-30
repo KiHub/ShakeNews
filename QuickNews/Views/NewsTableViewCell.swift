@@ -29,7 +29,7 @@ final class  NewsTableViewCell: UITableViewCell {
     }
     var newsImageData: Data? {
         didSet {
-            group.leave()
+            group.enter()
             if let data = newsImageData {
                 newsImage.image = UIImage(data: data)
             }
